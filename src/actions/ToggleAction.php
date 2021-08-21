@@ -74,12 +74,16 @@ class ToggleAction extends Action
      *
      * @throws BadRequestHttpException
      */
+
     public function findModel($modelClass, $id)
     {
-        if (($model = $modelClass::findOne([$this->pkColumn => $id])) !== null) {
+        $params = \Yii::$app->request->get();
+        $params[$this->pkColumn] = $id;
+
+        if (($model = $modelClass::findOne($params)) !== null) {
             return $model;
         } else {
-            throw new BadRequestHttpException('Entity not found by primary key ' . $id);
+            throw new BadRequestHttpException('Entity not found by primary key ' . var_dump($params));
         }
     }
 }
