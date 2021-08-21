@@ -1,6 +1,6 @@
 <?php
 
-namespace nickdenry\grid\toggle;
+namespace samuelelonghin\grid\toggle;
 
 use Yii;
 use yii\base\Module as BaseModule;

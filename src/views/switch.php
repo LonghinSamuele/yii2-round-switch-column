@@ -6,12 +6,12 @@
  * @author Nick Denry
  */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 
 ?>
 
 
-<label class="yii2-round-switch left">
+<label class="yii2-round-switch right">
     <?= Html::checkbox($name, $checked, [
         'data-id' => $model->id,
     ]); ?>

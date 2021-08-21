@@ -1,6 +1,6 @@
 <?php
 
-namespace nickdenry\grid\toggle\assets;
+namespace samuelelonghin\grid\toggle\assets;
 
 use yii\web\AssetBundle;
 
@@ -9,12 +9,12 @@ use yii\web\AssetBundle;
  */
 class RoundSwitchThemeAsset extends AssetBundle
 {
-    public $sourcePath = '@nickdenry/grid/toggle/web';
+    public $sourcePath = '@samuelelonghin/grid/toggle/web';
     public $css = [
         'css/round-switch.css',
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ];
 }

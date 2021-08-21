@@ -50,11 +50,11 @@
 }
 
 .yii2-round-switch input:checked + .slider {
-  background-color: #5cb85c;
+  background-color: #2088ff;
 }
 
 .yii2-round-switch input:focus + .slider {
-  box-shadow: 0 0 1px #5cb85c;
+  box-shadow: 0 0 1px #2088ff;
 }
 
 .yii2-round-switch.left input:checked + .slider:before {
