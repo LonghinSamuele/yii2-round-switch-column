@@ -1,13 +1,14 @@
 <?php
 
-namespace nickdenry\grid\toggle\actions;
+namespace samuelelonghin\grid\toggle\actions;
 
+use samuelelonghin\grid\toggle\helpers\ModelHelper;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
+use yii\db\ActiveRecord;
 use yii\web\BadRequestHttpException;
-use nickdenry\grid\toggle\Module as RoundSwitchModule;
-use nickdenry\grid\toggle\helpers\ModelHelper;
+use samuelelonghin\grid\toggle\Module as RoundSwitchModule;
 
 /**
  * Class ToggleAction
@@ -49,8 +50,7 @@ class ToggleAction extends Action
     public function run()
     {
         $request = Yii::$app->request;
-        if ($request->isAjax)
-        {
+        if ($request->isAjax) {
             \Yii::$app->response->format = 'json';
             $id = \Yii::$app->request->post('id');
             $attribute = \Yii::$app->request->post('attribute');
@@ -59,9 +59,7 @@ class ToggleAction extends Action
             $offValue = ModelHelper::getToggleValue($model, $attribute, RoundSwitchModule::SWITCH_KEY_OFF);
             $model->{$attribute} = $model->{$attribute} == $onValue ? $offValue : $onValue;
             return $model->save(true, [$attribute]);
-        }
-        else
-        {
+        } else {
             throw new BadRequestHttpException('Request must be XMLHttpRequest.');
         }
     }

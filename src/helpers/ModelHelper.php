@@ -1,11 +1,11 @@
 <?php
 
-namespace nickdenry\grid\toggle\helpers;
+namespace samuelelonghin\grid\toggle\helpers;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
-use nickdenry\grid\toggle\Module as RoundSwitchModule;
+use samuelelonghin\grid\toggle\Module as RoundSwitchModule;
 
 /**
  * Description of modelHelper
@@ -27,10 +27,8 @@ class ModelHelper
         if ($model->hasProperty($switchValuesProperty)) {
             if (ArrayHelper::keyExists($attribute, $model->{$switchValuesProperty})) {
                 return $model->{$module->switchValues}[$attribute][$type];
-            }
-            else
-            {
-                throw new InvalidConfigException('Attribute '.$attribute.' doesn\'t exist at '.$switchValuesProperty.' property array of '.get_class($model).' model');
+            } else {
+                throw new InvalidConfigException('Attribute ' . $attribute . ' doesn\'t exist at ' . $switchValuesProperty . ' property array of ' . get_class($model) . ' model');
             }
         }
         return $type == RoundSwitchModule::SWITCH_KEY_ON ? true : false;

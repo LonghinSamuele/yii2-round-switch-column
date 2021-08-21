@@ -6,10 +6,7 @@ $(document).ready(function () {
         e.stopPropagation();
         var $switch = $(this);
         if ($switch.hasClass('disabled')) {
-            alert();
             return;
-        } else {
-            alert("no");
         }
         var $checkbox = $switch.find('input');
         var $actionProvider = $('th[data-toggle-attribute="' + $checkbox.attr('name') + '"]');
@@ -22,8 +19,9 @@ $(document).ready(function () {
                 id: $checkbox.data('id'),
                 attribute: attribute,
             },
-        ).done(function () {
-            $checkbox.prop('checked', !$checkbox.prop('checked'));
+        ).done(function (res) {
+            if (res)
+                $checkbox.prop('checked', !$checkbox.prop('checked'));
         }).fail(function () {
             $switch.addClass('error');
         });

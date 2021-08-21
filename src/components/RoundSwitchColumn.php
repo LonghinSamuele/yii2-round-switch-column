@@ -5,15 +5,18 @@
  * @author Nick Denry
  */
 
-namespace nickdenry\grid\toggle\components;
+namespace samuelelonghin\grid\toggle\components;
 
 use Yii;
 use yii\grid\DataColumn;
 use yii\helpers\ArrayHelper;
+use yii\helpers\BaseFileHelper;
+use yii\helpers\FileHelper;
 use yii\helpers\Url;
-use nickdenry\grid\toggle\assets\RoundSwitchAsset;
-use nickdenry\grid\toggle\assets\RoundSwitchThemeAsset;
-use nickdenry\grid\toggle\helpers\ModelHelper;
+use samuelelonghin\grid\toggle\assets\RoundSwitchAsset;
+use samuelelonghin\grid\toggle\assets\RoundSwitchThemeAsset;
+use samuelelonghin\grid\toggle\helpers\ModelHelper;
+use yii\web\View;
 
 /**
  * Render a round switch toggleColumn in Yii2 GridView.
@@ -52,7 +55,7 @@ class RoundSwitchColumn extends DataColumn
     protected function renderDataCellContent($model, $key, $index)
     {
         $checked = ModelHelper::isChecked($model, $this->attribute);
-        return Yii::$app->view->render('@nickdenry/grid/toggle/views/switch', [
+        return Yii::$app->view->render('@samuelelonghin/grid/toggle/views/switch', [
             'model' => $model,
             'checked' => $checked,
             'name' => $this->attribute,
