@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "nickdenry\\grid\\toggle\\": "src"
+            "longhinsamuele\\grid\\toggle\\": "src"
         }
     }
 }
