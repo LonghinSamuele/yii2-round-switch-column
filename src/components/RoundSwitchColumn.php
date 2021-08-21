@@ -7,7 +7,9 @@
 
 namespace samuelelonghin\grid\toggle\components;
 
+use app\models\PermessoToggleInterface;
 use Yii;
+use yii\bootstrap4\Html;
 use yii\grid\DataColumn;
 use yii\helpers\ArrayHelper;
 use yii\helpers\BaseFileHelper;
@@ -28,6 +30,10 @@ class RoundSwitchColumn extends DataColumn
      * @var string toggle action name
      */
     public $action = 'toggle';
+    public $action_params = false;
+    public $data_id_attribute = 'id';
+    public $active_param = null;
+    public $disabledSwitchTextAttribute = 'nome';
 
     /**
      * {@inheritdoc}
@@ -47,18 +53,34 @@ class RoundSwitchColumn extends DataColumn
         RoundSwitchAsset::register(Yii::$app->view);
         RoundSwitchThemeAsset::register(Yii::$app->view);
         parent::init();
+        $this->action_params[] = $this->action;
+        $this->headerOptions = ArrayHelper::merge($this->headerOptions, [
+            'data-toggle-action' => Url::toRoute($this->action_params),
+            'data-toggle-attribute' => $this->attribute,
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
+    
+
     protected function renderDataCellContent($model, $key, $index)
     {
-        $checked = ModelHelper::isChecked($model, $this->attribute);
+        $checked = \nickdenry\grid\toggle\helpers\ModelHelper::isChecked($model, $this->attribute);
+        $out = null;
+        if ($model instanceof PermessoToggleInterface && !$this->active_param) {
+            $active = $model->getAttivo($out);
+        } else {
+            $active = ModelHelper::isChecked($model, $this->active_param);
+        }
+
         return Yii::$app->view->render('@samuelelonghin/grid/toggle/views/switch', [
             'model' => $model,
             'checked' => $checked,
             'name' => $this->attribute,
+            'active' => $active,
+            'disabledSwitchText' => $out->{$this->disabledSwitchTextAttribute}
         ]);
     }
 }
