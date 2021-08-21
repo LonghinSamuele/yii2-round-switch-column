@@ -63,7 +63,7 @@ class RoundSwitchColumn extends DataColumn
     /**
      * {@inheritdoc}
      */
-    
+
 
     protected function renderDataCellContent($model, $key, $index)
     {

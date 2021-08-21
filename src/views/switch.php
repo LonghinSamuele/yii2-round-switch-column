@@ -16,15 +16,6 @@ use samuelelonghin\grid\toggle\helpers\IdModelInterface;
 use yii\bootstrap4\Html;
 
 ?>
-
-
-<label class="yii2-round-switch right">
-    <?= Html::checkbox($name, $checked, [
-        'data-id' => $model->getId(),
-    ]); ?>
-    <div class="slider round"></div>
-</label>
-
 <label class="yii2-round-switch <?= ($active ? '' : 'disabled') ?> right">
     <?= Html::checkbox($this->attribute, $checked, [
         'data-id' => $model->getAttribute($this->data_id_attribute),
