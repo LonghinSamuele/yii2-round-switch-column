@@ -1,5 +1,5 @@
 {
-    "name": "nick-denry/yii2-round-switch-column",
+    "name": "longhinsamuele/yii2-round-switch-column",
     "description": "Round switch ToggleColumn for Yii2 GridView",
     "keywords": [
         "yii2",
@@ -17,8 +17,8 @@
     },
     "authors": [
         {
-            "name": "Nick Denry",
-            "email": "nick.denry@gmail.com"
+            "name": "Samuele Longhin",
+            "email": "longhin.samuele@outlook.com"
         }
     ],
     "require": {
