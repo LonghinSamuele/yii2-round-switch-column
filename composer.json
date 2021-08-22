@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "longhinsamuele\\grid\\toggle\\": "src"
+            "samuelelonghin\\grid\\toggle\\": "src"
         }
     }
 }

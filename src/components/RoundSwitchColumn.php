@@ -9,16 +9,12 @@ namespace samuelelonghin\grid\toggle\components;
 
 use app\models\PermessoToggleInterface;
 use Yii;
-use yii\bootstrap4\Html;
 use yii\grid\DataColumn;
 use yii\helpers\ArrayHelper;
-use yii\helpers\BaseFileHelper;
-use yii\helpers\FileHelper;
 use yii\helpers\Url;
 use samuelelonghin\grid\toggle\assets\RoundSwitchAsset;
 use samuelelonghin\grid\toggle\assets\RoundSwitchThemeAsset;
 use samuelelonghin\grid\toggle\helpers\ModelHelper;
-use yii\web\View;
 
 /**
  * Render a round switch toggleColumn in Yii2 GridView.
