@@ -79,7 +79,7 @@ class RoundSwitchColumn extends DataColumn
 			'checked' => $checked,
 			'name' => $this->attribute,
 			'active' => $active,
-			'disabledSwitchText' => $out->{$this->disabledSwitchTextAttribute}
+			'disabledSwitchText' => $out ? $out->{$this->disabledSwitchTextAttribute} : ''
 		]);
 	}
 }
