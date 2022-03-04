@@ -3,7 +3,6 @@
 /**
  * @file Render a round switch toggleColumn in Yii2 GridView.
  * @author Nick Denry
- * @author Samuele Longhin
  */
 
 namespace samuelelonghin\grid\toggle\components;
