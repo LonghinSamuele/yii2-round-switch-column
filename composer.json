@@ -1,6 +1,7 @@
 {
     "name": "samuelelonghin/yii2-round-switch-column",
     "description": "Round switch ToggleColumn for Yii2 GridView",
+    "varsion":"1.1.0",
     "keywords": [
         "yii2",
         "toggle",
