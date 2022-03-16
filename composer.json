@@ -11,10 +11,10 @@
     ],
     "type": "yii2-extension",
     "license": "MIT",
-    "homepage": "https://github.com/nick-denry/yii2-round-switch-column",
+    "homepage": "https://github.com/samuelelonghin/yii2-round-switch-column",
     "support": {
-        "issues": "https://github.com/nick-denry/yii2-round-switch-column/issues",
-        "source": "https://github.com/nick-denry/yii2-round-switch-column"
+        "issues": "https://github.com/samuelelonghin/yii2-round-switch-column/issues",
+        "source": "https://github.com/samuelelonghin/yii2-round-switch-column"
     },
     "authors": [
         {
