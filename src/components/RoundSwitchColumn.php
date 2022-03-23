@@ -3,6 +3,7 @@
 /**
  * @file Render a round switch toggleColumn in Yii2 GridView.
  * @author Nick Denry
+ * @author Samuele Longhin
  */
 
 namespace samuelelonghin\grid\toggle\components;
@@ -63,10 +64,10 @@ class RoundSwitchColumn extends DataColumn
 
 	protected function renderDataCellContent($model, $key, $index)
 	{
-		$checked = \nickdenry\grid\toggle\helpers\ModelHelper::isChecked($model, $this->attribute);
+		$checked = ModelHelper::isChecked($model, $this->attribute);
 		$out = null;
 		$active = true;
-		if ($model instanceof PermessoToggleInterface && !$this->active_param) {
+		if ($model instanceof ActiveToggleInterface && !$this->active_param) {
 			$active = $model->getAttivo($out);
 		} else if ($this->active_param) {
 			$active = ModelHelper::isChecked($model, $this->active_param);
