@@ -8,7 +8,6 @@
 
 namespace samuelelonghin\grid\toggle\components;
 
-use app\models\PermessoToggleInterface;
 use Yii;
 use yii\grid\DataColumn;
 use yii\helpers\ArrayHelper;
