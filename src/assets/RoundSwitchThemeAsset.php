@@ -15,6 +15,6 @@ class RoundSwitchThemeAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset', 
     ];
 }
