@@ -74,7 +74,7 @@ class RoundSwitchColumn extends DataColumn
 
 		return Yii::$app->view->render('@samuelelonghin/grid/toggle/views/switch', [
 			'model' => $model,
-			'id' => $model->getAttribute($this->data_id_attribute),
+			'id' => ModelHelper::getValue($model,$this->data_id_attribute),
 			'checked' => $checked,
 			'name' => $this->attribute,
 			'active' => $active,
