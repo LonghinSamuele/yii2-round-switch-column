@@ -28,7 +28,7 @@ class RoundSwitchColumn extends DataColumn
 	public $action = 'toggle';
 	public $action_params = [];
 	public $data_id_attribute = 'id';
-	public $active_param = null;
+	public $active_param = [];
 	public $disabledSwitchTextAttribute = 'nome';
 
 	/**
